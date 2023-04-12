@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:13:24 by atoof             #+#    #+#             */
-/*   Updated: 2022/11/22 16:10:50 by atoof            ###   ########.fr       */
+/*   Updated: 2023/03/08 13:56:23 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,9 @@ char	**ft_split(char const *s, char c)
 {
 	int		count;
 	char	**str;
-	int		index;
 
 	if (!s)
 		return (NULL);
-	index = 0;
 	count = count_str(s, c);
 	str = (char **)malloc(sizeof(char *) * (count + 1));
 	if (!str)

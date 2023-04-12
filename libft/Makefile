@@ -25,20 +25,26 @@ SRC_B = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c 
 
 all: $(NAME)
+	@echo "\033[1;32m[✔] Successfully compiled libft.a!\033[0m"
 
 $(NAME):
-	cc $(FLAG) -c $(SRC)
-	ar rcs $(NAME) $(SRC:.c=.o)
+	@cc $(FLAG) -c $(SRC)
+	@ar rcs $(NAME) $(SRC:.c=.o)
+	@echo "\033[1;34m[✨] Creating libft.a...\033[0m"
 
 bonus: $(SRC_B:.c=.o)
+	@echo "\033[1;33m[⭐] Compiling bonus functions...\033[0m"
 
 $(SRC_B:.c=.o): $(SRC_B)	
-	cc $(FLAGS) -c $(SRC_B) -I $(HEADER)
-	ar rcs $(NAME) $(SRC_B:.c=.o)
+	@cc $(FLAGS) -c $(SRC_B) -I $(HEADER)
+	@ar rcs $(NAME) $(SRC_B:.c=.o)
 
 clean:
-	/bin/rm -f $(SRC:.c=.o) $(SRC_B:.c=.o)
+	@/bin/rm -f $(SRC:.c=.o) $(SRC_B:.c=.o)
+	@echo "\033[1;35m[🧹] Cleaning object files...\033[0m"
+
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
+	@echo "\033[1;35m[🧹] Cleaning libft.a...\033[0m"
 
 re: fclean all
