@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	count_str(char const *str, char c)
+int	count_str(char const *str, char c)
 {
 	int	i;
 	int	word;
